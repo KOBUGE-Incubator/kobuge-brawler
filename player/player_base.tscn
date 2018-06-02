@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://player/player_base.gd" type="Script" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 32.0
+
+[node name="player" type="KinematicBody2D"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+max_speed = 500.0
+time_to_max_speed = 0.8
+time_to_stop = 0.4
+max_angular_speed_deg = 720.0
+angular_acceleration_time = 0.1
+
+[node name="collision_shape_2d" type="CollisionShape2D" parent="." index="0"]
+
+shape = SubResource( 1 )
+
+[node name="polygon_2d" type="Polygon2D" parent="." index="1"]
+
+polygon = PoolVector2Array( 0, -32, 22, -22, 32, 0, 22, 22, 0, 32, -22, 22, -32, 0, -22, -22 )
+uv = PoolVector2Array(  )
+color = Color( 1, 1, 1, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+
+[node name="polygon_2d2" type="Polygon2D" parent="." index="2"]
+
+polygon = PoolVector2Array( 0, -32, 22, -22, 32, 0, 2, -21, 0, 32, -2, -21, -32, 0, -22, -22 )
+uv = PoolVector2Array(  )
+color = Color( 0.382812, 0.382812, 0.382812, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+
+
