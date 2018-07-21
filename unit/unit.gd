@@ -20,7 +20,6 @@ func _physics_process(delta):
 	handle_aiming(delta)
 
 func handle_movement(delta):
-	
 	if movement_direction.dot(velocity.normalized()) < 0.4 or movement_direction.length_squared() == 0:
 		velocity *= pow(0.1, delta / time_to_stop)
 	
@@ -41,7 +40,8 @@ func handle_aiming(delta):
 
 func set_movement_direction(movement_direction):
 	self.movement_direction = movement_direction
-func set_aim_pos( aim_pos ):
+
+func set_aim_pos(aim_pos):
 	self.aim_pos = aim_pos
 
 static func truncate(scalar, magnitude):

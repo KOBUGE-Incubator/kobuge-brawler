@@ -1,13 +1,13 @@
 extends Node2D
 
-var unit_script = preload(  "res://unit/unit.gd" )
+const Unit = preload("res://unit/unit.gd")
 onready var unit = get_parent()
 
 func _ready():
 	pass
 
 func _physics_process(delta):
-	if( unit && unit is unit_script ):
+	if unit and unit is Unit:
 		handle_movement(delta)
 		handle_aiming(delta)
 
